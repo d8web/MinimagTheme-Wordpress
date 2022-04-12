@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head() ?>
 </head>
 
@@ -10,7 +11,7 @@
     <header>
         <div class="top-header">
             <div class="container">
-                <nav class="navbar navbar-expand-lg">
+                <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -65,7 +66,7 @@
                     </div>
                     <div class="main-info">
                         <div class="row">
-                            <div class="col-sm-8 ramdom-post">
+                            <div class="col-md-6 col-xl-8 ramdom-post">
                                 <strong class="me-5">Já viu?</strong>
 
                                 <?php
@@ -87,7 +88,7 @@
                                 <?php endif ?>
 
                             </div>
-                            <div class="col-sm-4 social-area">
+                            <div class="col-md-6 col-xl-4 social-area">
                                 <div class="social-text">SIGA-NOS</div>
                                 <div class="social-icons">
                                     <a href="https://facebook.com/link" target="_blank">
