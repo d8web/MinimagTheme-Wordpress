@@ -232,6 +232,17 @@ body {
     color: #333;
 }
 
+.post-video,
+.post-audio {
+    width: 100%;
+    height: 300px;
+}
+
+.post-audio iframe,
+.post-video iframe {
+    height: 100%;
+}
+
 .content-dm .post-item {
     position: relative;
 }
@@ -245,6 +256,10 @@ body {
     font-size: 1.05rem;
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px;
+}
+
+.post-content iframe {
+    min-height: 400px;
 }
 
 .post-content img {

@@ -9,37 +9,40 @@
 <body <?php body_class() ?>>
 
     <header>
-        <div class="top-header">
-            <div class="container">
-                <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
 
-                        <?php if(has_nav_menu("top")): ?>
-                            <?php
-                                wp_nav_menu([
-                                    "theme_location" => "top",
-                                    "container" => false,
-                                    "fallback_cb" => false,
-                                    "menu_class" => "navbar-nav"
-                                ]);
-                            ?>
-                        <?php endif ?>
+        <?php if(get_theme_mod("dm_topmenushow") == "yes"): ?>
+            <div class="top-header">
+                <div class="container">
+                    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav"
+                            aria-controls="navbarNav"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
 
-                    </div>
-                </nav>
+                            <?php if(has_nav_menu("top")): ?>
+                                <?php
+                                    wp_nav_menu([
+                                        "theme_location" => "top",
+                                        "container" => false,
+                                        "fallback_cb" => false,
+                                        "menu_class" => "navbar-nav"
+                                    ]);
+                                ?>
+                            <?php endif ?>
+
+                        </div>
+                    </nav>
+                </div>
             </div>
-        </div>
+        <?php endif ?>
 
         <div class="main-header">
             <div class="container">
@@ -61,7 +64,9 @@
                             ?>
                         <?php endif ?>
                         <div class="search-area">
-                            <?php get_search_form() ?>
+                            <?php if(get_theme_mod("dm_searchshow") == "yes"): ?>
+                                <?php get_search_form() ?>
+                            <?php endif ?>
                         </div>
                     </div>
                     <div class="main-info">
@@ -91,36 +96,52 @@
                             <div class="col-md-6 col-xl-4 social-area">
                                 <div class="social-text">SIGA-NOS</div>
                                 <div class="social-icons">
-                                    <a href="https://facebook.com/link" target="_blank">
-                                        <img
-                                            src="<?= get_template_directory_uri() ?>/assets/images/facebook.png"
-                                            alt="facebook-icon"
-                                        />
-                                    </a>
-                                    <a href="https://google.com/link" target="_blank">
-                                        <img
-                                            src="<?= get_template_directory_uri() ?>/assets/images/gplus.png"
-                                            alt="google-plus-icon"
-                                        />
-                                    </a>
-                                    <a href="https://instagram.com/link" target="_blank">
-                                        <img
-                                            src="<?= get_template_directory_uri() ?>/assets/images/instagram.png"
-                                            alt="instagram-icon"
-                                        />
-                                    </a>
-                                    <a href="https://twitter.com/link" target="_blank">
-                                        <img
-                                            src="<?= get_template_directory_uri() ?>/assets/images/twitter.png"
-                                            alt="twitter-icon"
-                                        />
-                                    </a>
-                                    <a href="https://youtube.com/link" target="_blank">
-                                        <img
-                                            src="<?= get_template_directory_uri() ?>/assets/images/youtube.png"
-                                            alt="youtube-icon"
-                                        />
-                                    </a>
+
+                                    <?php if(get_theme_mod("dm_facebook")): ?>
+                                        <a href="<?= get_theme_mod("dm_facebook") ?>" target="_blank">
+                                            <img
+                                                src="<?= get_template_directory_uri() ?>/assets/images/facebook.png"
+                                                alt="facebook-icon"
+                                            />
+                                        </a>
+                                    <?php endif ?>
+                                    
+                                    <?php if(get_theme_mod("dm_googleplus")): ?>
+                                        <a href="<?= get_theme_mod("dm_googleplus") ?>" target="_blank">
+                                            <img
+                                                src="<?= get_template_directory_uri() ?>/assets/images/gplus.png"
+                                                alt="google-plus-icon"
+                                            />
+                                        </a>
+                                    <?php endif ?>
+                                    
+                                    <?php if(get_theme_mod("dm_instagram")): ?>
+                                        <a href="<?= get_theme_mod("dm_instagram") ?>" target="_blank">
+                                            <img
+                                                src="<?= get_template_directory_uri() ?>/assets/images/instagram.png"
+                                                alt="instagram-icon"
+                                            />
+                                        </a>
+                                    <?php endif ?>
+                                    
+                                    <?php if(get_theme_mod("dm_twitter")): ?>
+                                        <a href="<?= get_theme_mod("dm_twitter") ?>" target="_blank">
+                                            <img
+                                                src="<?= get_template_directory_uri() ?>/assets/images/twitter.png"
+                                                alt="twitter-icon"
+                                            />
+                                        </a>
+                                    <?php endif ?>
+                                    
+                                    <?php if(get_theme_mod("dm_youtube")): ?>
+                                        <a href="<?= get_theme_mod("dm_youtube") ?>" target="_blank">
+                                            <img
+                                                src="<?= get_template_directory_uri() ?>/assets/images/youtube.png"
+                                                alt="youtube-icon"
+                                            />
+                                        </a>
+                                    <?php endif ?>
+
                                 </div>
                             </div>
                         </div>

@@ -3,7 +3,7 @@
 <section class="page-area">
     <div class="container">
         <div class="row">
-            <div class="col-sm-8 content-dm">
+            <div class="col-sm-12 col-lg-8 content-dm">
                 <?php if(have_posts()): ?>
                     <?php while(have_posts()): ?>
 
@@ -42,7 +42,7 @@
                 <?php endif ?>
 
             </div>
-            <div class="col-sm-4 content-sidebar-dm">
+            <div class="col-sm-12 col-lg-4 content-sidebar-dm">
                 <?php get_sidebar() ?>
             </div>
         </div>
