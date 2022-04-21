@@ -3,7 +3,10 @@
 <section class="page-area">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-lg-8 content-dm">
+            <div
+                id="post-<?=the_ID()?>"
+                <?php post_class("col-sm-12 col-lg-8 content-dm") ?>
+            >
                 <?php if(have_posts()): ?>
                     <?php while(have_posts()): ?>
 

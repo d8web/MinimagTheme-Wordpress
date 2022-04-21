@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes() ?>>
 
 <head>
+    <meta charset="<?=bloginfo("charset")?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head() ?>
 </head>
@@ -163,5 +164,16 @@
                 </div>
             </div>
         </div>
+
+        <?php if(get_header_image()): ?>
+            <section class="container custom-header">
+                <img
+                    src="<?php header_image() ?>"
+                    width="<?php // echo get_custom_header()->width; ?>"
+                    height="<?php // echo get_custom_header()->height; ?>"
+                    alt=""
+                />
+            </section>
+        <?php endif ?>
 
     </header>

@@ -1,4 +1,4 @@
-<article>
+<article <?php post_class() ?>>
     <a href="<?php the_permalink() ?>" class="link-post">
         <div class="post-item">
 

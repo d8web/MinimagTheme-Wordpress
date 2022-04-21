@@ -1,0 +1,9 @@
+@media print {
+    header,
+    aside,
+    .pagination,
+    .comments-area,
+    footer {
+        display: none;
+    }
+}
