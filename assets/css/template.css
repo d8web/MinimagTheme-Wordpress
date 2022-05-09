@@ -276,9 +276,9 @@ body {
 
 .pagination {
     margin: 20px 0px;
+    clear: both;
     padding: 10px;
     display: flex;
-    justify-content: space-between;
 }
 
 .pagination a {
